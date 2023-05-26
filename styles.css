@@ -38,7 +38,7 @@ h1 {
 }
 
 gameboard {
-  margin: auto;
+  margin-top: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
@@ -71,7 +71,7 @@ dialog {
   text-align: center;
   z-index: 9999;
   margin: auto;
-  padding: 40px 60px;
+  padding: 20px 30px;
   border: 0px;
   border-radius: 20px;
   font-size: 45px;
@@ -89,6 +89,19 @@ dialog button {
   margin-top: auto;
   color: var(--secondary);
   cursor: pointer;
+  border: 2px solid var(--secondary);
+}
+
+dialog button:hover {
+  color: var(--bg);
+  background-color: var(--secondary);
+  border: 2px solid var(--bg);
+}
+
+.current-turn {
+  margin-bottom: auto;
+  font-size: 80px;
+  color: var(--accent);
 }
 
 @media screen and (min-width: 400px) {
@@ -113,5 +126,13 @@ dialog button {
 
   gameboard {
     grid-gap: 20px;
+  }
+
+  dialog {
+    padding: 40px 60px;
+  }
+
+  .current-turn {
+    font-size: 110px;
   }
 }

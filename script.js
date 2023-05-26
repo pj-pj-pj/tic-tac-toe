@@ -79,6 +79,8 @@ const CompStyle = getComputedStyle(root);
 const xColor = CompStyle.getPropertyValue('--accent');
 const oColor = CompStyle.getPropertyValue('--primary');
 
+const currentTurn = document.querySelector('.current-turn');
+
 boardContainer.addEventListener('click', function (e) {
   if (
     e.target.classList.contains('board-cell') &&
@@ -89,8 +91,11 @@ boardContainer.addEventListener('click', function (e) {
       playerO.turn.call(e.target);
       e.target.classList.add('o-mark');
       e.target.classList.add('marked');
-      e.target.style.borderColor = oColor;
       turnCount++;
+      //turn display
+      e.target.style.borderColor = xColor;
+      currentTurn.textContent = 'X';
+      currentTurn.style.fontColor = xColor;
       // change value of board array
       const index = e.target.getAttribute('data-index');
       gameBoard.setCell(index, 'o');
@@ -100,6 +105,10 @@ boardContainer.addEventListener('click', function (e) {
       e.target.classList.add('marked');
       e.target.style.borderColor = xColor;
       turnCount++;
+      //turn display
+      e.target.style.borderColor = oColor;
+      currentTurn.textContent = 'O';
+      currentTurn.style.fontColor = oColor;
       // change value of board array
       const index = e.target.getAttribute('data-index');
       gameBoard.setCell(index, 'x');
