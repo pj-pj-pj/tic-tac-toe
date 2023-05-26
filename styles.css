@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 
 :root {
   --bg: #121212;
   --border: #3f3f3f;
+  --primary: #ff956b;
+  --accent: #ff5722;
+  --secondary: #f8bba3;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 html {
@@ -27,7 +32,7 @@ body {
 h1 {
   padding-top: 15px;
   font-size: 50px;
-  background: linear-gradient(90deg, #ff956b, #ff5722);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -41,9 +46,25 @@ gameboard {
 
 .board-cell {
   border-radius: 15px;
-  border: 1px solid #ffb99b;
+  border: 1px solid var(--secondary);
   height: 4.5rem;
   width: 4.5rem;
+
+  /* markers */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  font-family: 'Pangolin', cursive;
+  padding-bottom: 8px;
+}
+
+.x-mark {
+  color: var(--accent);
+}
+
+.o-mark {
+  color: var(--primary);
 }
 
 @media screen and (min-width: 400px) {
@@ -59,7 +80,14 @@ gameboard {
 
 @media screen and (min-width: 600px) {
   .board-cell {
+    font-size: 200px;
+    padding-bottom: 20px;
+
     height: 12rem;
     width: 12rem;
+  }
+
+  gameboard {
+    grid-gap: 20px;
   }
 }
