@@ -46,7 +46,7 @@ gameboard {
 
 .board-cell {
   border-radius: 15px;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--border);
   height: 4.5rem;
   width: 4.5rem;
 
@@ -65,6 +65,30 @@ gameboard {
 
 .o-mark {
   color: var(--primary);
+}
+
+dialog {
+  text-align: center;
+  z-index: 9999;
+  margin: auto;
+  padding: 40px 60px;
+  border: 0px;
+  border-radius: 20px;
+  font-size: 45px;
+  background-color: var(--secondary);
+}
+
+dialog button {
+  border: 0px;
+  font-size: 20px;
+  background-color: var(--bg);
+  padding: 8px 20px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  font-family: inherit;
+  margin-top: auto;
+  color: var(--secondary);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 400px) {
