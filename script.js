@@ -87,7 +87,7 @@ boardContainer.addEventListener('click', function (e) {
     !e.target.classList.contains('marked') &&
     gameBoard.checkBoard() == null
   ) {
-    if (turnCount % 2 === 0) {
+    if (turnCount % 2 != 0) {
       playerO.turn.call(e.target);
       e.target.classList.add('o-mark');
       e.target.classList.add('marked');
