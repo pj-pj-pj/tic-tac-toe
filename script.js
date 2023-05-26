@@ -72,7 +72,7 @@ function createPlayer(mark) {
 
 const playerX = createPlayer('x');
 const playerO = createPlayer('o');
-let turnCount = 1;
+let turnCount = 0;
 
 const root = document.querySelector('body');
 const CompStyle = getComputedStyle(root);
