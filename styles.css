@@ -115,6 +115,18 @@ dialog button:hover {
   }
 }
 
+footer {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 13px;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 1%;
+}
+
 @media screen and (min-width: 600px) {
   .board-cell {
     font-size: 200px;
