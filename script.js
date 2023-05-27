@@ -2,15 +2,16 @@ const boardContainer = document.querySelector('gameboard');
 
 const gameBoard = (function () {
   let board = [null, null, null, null, null, null, null, null, null];
-  boardContainer.innerHTML = '';
 
-  for (let i = 0; i < board.length; i++) {
-    const boardCell = document.createElement('div');
-    boardCell.className = 'board-cell';
-    boardCell.setAttribute('data-index', i);
+  (createBoard = function () {
+    for (let i = 0; i < board.length; i++) {
+      const boardCell = document.createElement('div');
+      boardCell.className = 'board-cell';
+      boardCell.setAttribute('data-index', i);
 
-    boardContainer.append(boardCell);
-  }
+      boardContainer.append(boardCell);
+    }
+  })();
 
   return {
     setCell: (index, marker) => {
@@ -49,14 +50,7 @@ const gameBoard = (function () {
       board = [null, null, null, null, null, null, null, null, null];
       boardContainer.innerHTML = '';
       turnCount = 0;
-
-      for (let i = 0; i < board.length; i++) {
-        const boardCell = document.createElement('div');
-        boardCell.className = 'board-cell';
-        boardCell.setAttribute('data-index', i);
-
-        boardContainer.append(boardCell);
-      }
+      createBoard();
     },
   };
 })();
@@ -119,6 +113,7 @@ boardContainer.addEventListener('click', function (e) {
 });
 
 const modal = document.querySelector('dialog');
+
 function showResult() {
   const player = gameBoard.checkBoard();
   if (gameBoard.checkBoard() != null) {
