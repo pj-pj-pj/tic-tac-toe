@@ -4,7 +4,7 @@
 :root {
   --bg: #121212;
   --border: #3f3f3f;
-  --primary: #ff956b;
+  --primary: #ff7d4a;
   --accent: #ff5722;
   --secondary: #f8bba3;
 }
@@ -92,10 +92,48 @@ dialog button {
   border: 2px solid var(--secondary);
 }
 
-dialog button:hover {
+.for-winner button:hover {
   color: var(--bg);
   background-color: var(--secondary);
   border: 2px solid var(--bg);
+}
+
+.x-or-o {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.x-or-o p {
+  grid-column: span 2;
+}
+
+.x-or-o button {
+  height: 80px;
+  width: 80px;
+}
+
+.x-or-o button:hover {
+  font-size: 45px;
+  transition: 0.1s ease-in;
+  padding-bottom: 10px;
+  transition: 0.1s ease-in;
+  margin-bottom: 5px;
+  border-radius: 30px;
+}
+
+.x-or-o .x:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.x-or-o .o:hover {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
+.x-or-o div {
+  font-size: 20px;
 }
 
 .current-turn {
@@ -140,7 +178,7 @@ footer {
     grid-gap: 20px;
   }
 
-  dialog {
+  .for-winner {
     padding: 40px 60px;
   }
 
