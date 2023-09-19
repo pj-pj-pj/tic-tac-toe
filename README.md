@@ -1,2 +1,8 @@
 # tic-tac-toe
- Tic Tac Toe is a 3x3 grid game where players take turns placing their marks (X or O) with the goal of making three marks in a row to win.
+an implementation of the famous tic-tac-toe game
+
+## features
+- choose if you will play as: `X` or `O`
+- the game is purely single player and the mark you don't choose will be chosen by the computer player
+- the mark `X` will always be given the first turn
+- enjoy!
